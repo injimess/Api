@@ -38,7 +38,7 @@ public class Account {
 	public List<Transaction> getTransaction() {
 		return transactions;
 	}
-	public void setTransaction(List<Transaction> transactions) {
+	public void setTransactions(List<Transaction> transactions) {
 		this.transactions = transactions;
 	} 
 	
