@@ -14,6 +14,7 @@ public class Transaction {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int transactionId ; 
+
 	private float ammount ;
 	
 

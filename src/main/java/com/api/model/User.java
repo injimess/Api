@@ -29,6 +29,17 @@ public class User {
 	@OneToMany(targetEntity = Account.class,cascade = {CascadeType.ALL})
 	private List<Account> accounts;
 	
+	
+	public User() {}
+	
+	public User(String string, String string2, String string3) {
+		super() ; 
+		this.firstName = string ; 
+		this.lastName = string2 ; 
+		this.password = string3 ; 
+		
+	}
+	
 	public Integer getUserId() {
 		return userId;
 	}
