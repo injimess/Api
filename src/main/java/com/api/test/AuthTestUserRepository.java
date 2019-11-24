@@ -24,10 +24,10 @@ public class AuthTestUserRepository {
 	
 	@Test 
 	public void testFindUser () throws Exception {
-		User userM = new User("firstname", "lastname", "password") ; 
+		User userM = new User(1,"firstname", "lastname", "password") ; 
 		this.entityManger.persist(userM);
-		User user = this.userRepository.findByFirstName("firstname");
-		assertThat(user.getFirstName()).isEqualTo("firstname");
+		User user = this.userRepository.findByCustomerId(1);
+		assertThat(user.getCustomerId()).isEqualTo(1);
 		assertThat(user.getPassword()).isEqualTo("password");
 		
 	}

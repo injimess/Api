@@ -1,1 +1,1 @@
-insert into user(USER_ID , FIRST_NAME , LAST_NAME , PASSWORD) values (5, 'Inass' , 'Belgcir' , 'pass123') ; 
+insert into user(USER_ID,CUSTOMER_ID , FIRST_NAME , LAST_NAME , PASSWORD) values (5,5, 'Inass' , 'Belgcir' , 'pass123') ; 

@@ -7,27 +7,27 @@ public class AuthenticationRequest implements Serializable{
 	
 	private static final long serialVersionUID = 3937497075151274954L;
 	
-		private Integer  userId;
+		private Integer  customerId;
 	    private String password;
 
 	    public AuthenticationRequest() {
 	        super();
 	    }
 
-	    public AuthenticationRequest(Integer userId, String password) {
-	        this.setUserId(userId);
+	    public AuthenticationRequest(Integer customerId, String password) {
+	        this.setCustomerId(customerId);
 	        this.setPassword(password);
 	    }
 
 	   
 	  
 
-	    public Integer  getUserId() {
-			return this.userId;
+	    public Integer  getCustomerId() {
+			return this.customerId;
 		}
 
-		public void setUserId(Integer  userId) {
-			this.userId = userId;
+		public void setCustomerId(Integer  customerId) {
+			this.customerId = customerId;
 		}
 
 		public String getPassword() {

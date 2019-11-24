@@ -1,5 +1,7 @@
 package com.api.controller;
 
+import javax.transaction.Transactional;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,8 +38,8 @@ public class UserController {
 		
 			 
 		     try {
-		    	    user = userServ.authenticate(authenticationRequest.getUserId());
-		    	  //check if the userId exists
+		    	    user = userServ.authenticate(authenticationRequest.getCustomerId());
+		    	  //check if the customerId exists
 		    	    if(user!=null) {
 		    	    	// check if the password is correct
 		    	    	if(user.getPassword().equals(authenticationRequest.getPassword()))

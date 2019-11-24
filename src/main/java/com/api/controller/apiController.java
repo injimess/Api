@@ -25,27 +25,26 @@ import com.api.service.UserService;
 @RestController
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RequestMapping("/api")
-public class apiController {
+public class ApiController {
 	
 	@Autowired AccountService accountServ ; 
 	@Autowired UserService userServ ; 
 	@Autowired TransactionService transactionServ ; 
 	
 	//Get Api to show user informations
-	@GetMapping("/user/{userId}")
-	public User getInformation(@PathVariable("userId") Integer userId) {
+	@GetMapping("/user/{customerId}")
+	public User getInformation(@PathVariable("customerId") Integer customerId) {
 		User currentUser = new User() ; 
-		currentUser=userServ.findUser(userId) ; 
-		return currentUser ; 
-		 
+		currentUser=userServ.findUser(customerId) ; 
+		return currentUser ;
 	}
 	
 	//Post Api that creates new account for the user
-	@PostMapping(value = "/user/{userId}/{initialCredit}" , produces = "application/json")
-	public StringResponse InitialiseAccount(@PathVariable("initialCredit") Integer initialCredit,@PathVariable("userId") Integer userId) throws Exception {
+	@PostMapping(value = "/user/{customerId}/{initialCredit}" , produces = "application/json")
+	public StringResponse initialiseAccount(@PathVariable("initialCredit") Integer initialCredit,@PathVariable("customerId") Integer customerId) throws Exception {
 		
 		User currentUser = new User() ; 
-		currentUser=userServ.findUser(userId) ; 
+		currentUser=userServ.findUser(customerId) ; 
 		String response = "Your account has been created successfully " ; 
 		
 		

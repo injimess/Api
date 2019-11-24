@@ -23,28 +23,35 @@ public class User {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@NotNull
 	private Integer userId ; 
+	private Integer customerId ; 
 	private String firstName ; 
 	private String lastName ; 
 	private String password ; 
 	@OneToMany(targetEntity = Account.class,cascade = {CascadeType.ALL})
 	private List<Account> accounts;
 	
-	
 	public User() {}
 	
-	public User(String string, String string2, String string3) {
+	public User(Integer i,String string, String string2, String string3) {
 		super() ; 
+		this.customerId = i ; 
 		this.firstName = string ; 
 		this.lastName = string2 ; 
 		this.password = string3 ; 
 		
 	}
-	
 	public Integer getUserId() {
 		return userId;
 	}
 	public void setUserId(int userId) {
 		this.userId = userId;
+	}
+	public Integer getCustomerId() {
+		return customerId;
+	}
+
+	public void setCustomerId(Integer customerId) {
+		this.customerId = customerId;
 	}
 	public String getFirstName() {
 		return firstName;
@@ -71,13 +78,5 @@ public class User {
 		this.accounts = accounts;
 	} 
 	
-	
-
-	
-	
-
-
-	
-
 
 }

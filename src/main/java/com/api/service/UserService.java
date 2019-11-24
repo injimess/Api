@@ -18,11 +18,11 @@ public class UserService {
 	
 	@Autowired UserRepository userRepo ; 
 	
-	public User authenticate (Integer userId) {
+	public User authenticate (Integer customerId) {
 		User user = null; 
 		try {
 
-			user = userRepo.findByUserId(userId) ; 
+			user = userRepo.findByCustomerId(customerId) ; 
 			if(user !=null)
 			System.out.println("user" + user) ; 
 			else 
@@ -41,9 +41,9 @@ public class UserService {
 		return userRepo.save(user) ; 
 	}
 	
-	public User findUser(Integer userId) {
+	public User findUser(Integer customerId) {
 		
-		return userRepo.findByUserId(userId) ; 
+		return userRepo.findByCustomerId(customerId) ; 
 	}
 
 

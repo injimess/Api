@@ -30,7 +30,7 @@ public class TestUserService {
 	@Test
 	public void getUser() {
 		
-		User user = new User("firstname" , "lastname" , "password") ; 
+		User user = new User(1,"firstname" , "lastname" , "password") ; 
 		
 		when(userRepository.save(user)).thenReturn(user) ; 
 		User userTested = userService.save(user) ; 
